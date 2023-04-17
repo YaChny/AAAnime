@@ -16,7 +16,7 @@ def GetUMAnimeLst():
                 UMAnimelst.append(anime)
     return UMAnimelst
 
-def GetCharacterLst():
+def GetCharacterLst(cur):
     CharLst = []
     cur.execute('SELECT id,Anime FROM UMAnime')
     for row in cur:
@@ -100,7 +100,7 @@ def main():
     cur = conn.cursor()
     UMAnimeLst = GetUMAnimeLst()
     GetUMAnimes(UMAnimeLst, cur, conn)
-    CharacterLst = GetCharacterLst()
+    CharacterLst = GetCharacterLst(cur)
     GetCharacters(CharacterLst, cur, conn)
     QuoteLst = GetQuoteLst(UMAnimeLst, CharacterLst)
     GetQuotes(QuoteLst, cur, conn)

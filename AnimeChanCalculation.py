@@ -34,12 +34,12 @@ def total_char_quote(cur):
     return dic
 
 def MoreThanFiveQuotes(dic):
-    FiveMOre = {}
+    FiveMore = {}
     AnimeLst = list(dic.keys())
     for i in range(0,len(AnimeLst)):
         if dic[AnimeLst[i]]["quote_num"] > 5:
-            FiveMOre[AnimeLst[i]] = dic[AnimeLst[i]]
-    return FiveMOre
+            FiveMore[AnimeLst[i]] = dic[AnimeLst[i]]
+    return FiveMore
 
 def percentage_char_quote(dic):
     percentage_dic = {}

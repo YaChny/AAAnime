@@ -95,7 +95,7 @@ def GetQuotes(QuoteLst, cur, conn):
         id += 1
     conn.commit()
 
-if __name__ == '__main__':
+def main():
     conn = sqlite3.connect('Animeee.db')
     cur = conn.cursor()
     UMAnimeLst = GetUMAnimeLst()
@@ -105,3 +105,6 @@ if __name__ == '__main__':
     QuoteLst = GetQuoteLst(UMAnimeLst, CharacterLst)
     GetQuotes(QuoteLst, cur, conn)
     cur.close()
+
+if __name__ == '__main__':
+    main()

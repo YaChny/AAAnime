@@ -63,8 +63,19 @@ def write_result(FiveMore,dic,percentage_dic,filename):
         f.write("Percentage of animation which has more than 5 quotes: " + str(round(len(percentage_dic)/len(dic),2)) + "\n")
         f.write("Percentage of each character's quote in each animation which has more than 5 quotes: " + str(percentage_dic) + "\n")
 
-def AnimeChanVisual():
-    pass
+def AnimeChanVisual(FiveMore):
+    AnimeLst = list(FiveMore.keys())
+    for i in range(0,len(AnimeLst)):
+        CharLst = []
+        NumQuoLst = []
+        CharLst = list(FiveMore[AnimeLst[i]]['char_num'].keys())
+        for c in CharLst:
+            NumQuoLst.append(FiveMore[AnimeLst[i]]['char_num'][c])
+        
+        fig = go.Figure(data=[go.Pie(labels=CharLst,values=NumQuoLst)])
+        title_str = "The percentage of each character's quotes in '" + AnimeLst[i] + "'"
+        fig.update_layout(title = title_str)
+        fig.show()
 
 def main():
     conn = sqlite3.connect('Animeee.db')
@@ -74,6 +85,7 @@ def main():
     FiveMore = MoreThanFiveQuotes(dic)
     percentage_dic = percentage_char_quote(dic)
     write_result(FiveMore,dic,percentage_dic,filename)
+    AnimeChanVisual(FiveMore)
 
 if __name__ == '__main__':
     main()

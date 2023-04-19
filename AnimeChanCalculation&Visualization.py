@@ -57,11 +57,15 @@ def percentage_char_quote(dic):
 
 def write_result(FiveMore,dic,percentage_dic,filename):
     with open(filename, 'w') as f:
-        f.write("Total number of each character's quote in each animation which name contains 'um': "+ str(dic)+"\n")
+        f.write("Dictionary of total number of each character's quote in each animation which name contains 'um':\n"+ str(dic)+"\n")
+        f.write("\n")
         f.write("Number of animation which has more than 5 quotes: " + str(len(percentage_dic)) + "\n")
-        f.write("Dictionary of animation which has more than 5 quotes: " + str(FiveMore) + "\n")
+        f.write("\n")
+        f.write("Dictionary of animation which has more than 5 quotes: \n" + str(FiveMore) + "\n")
+        f.write("\n")
         f.write("Percentage of animation which has more than 5 quotes: " + str(round(len(percentage_dic)/len(dic),2)) + "\n")
-        f.write("Percentage of each character's quote in each animation which has more than 5 quotes: " + str(percentage_dic) + "\n")
+        f.write("\n")
+        f.write("Dictionary of percentage of each character's quote in each animation which has more than 5 quotes: \n" + str(percentage_dic) + "\n")
 
 def AnimeChanVisual(FiveMore):
     AnimeLst = list(FiveMore.keys())

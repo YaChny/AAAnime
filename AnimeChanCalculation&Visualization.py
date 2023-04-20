@@ -41,17 +41,16 @@ def MoreThanFiveQuotes(dic):
             FiveMore[AnimeLst[i]] = dic[AnimeLst[i]]
     return FiveMore
 
-def percentage_char_quote(dic):
+def percentage_char_quote(FiveMore):
     percentage_dic = {}
-    AnimeLst = list(dic.keys())
+    AnimeLst = list(FiveMore.keys())
     for i in range(0,len(AnimeLst)):
-        if dic[AnimeLst[i]]["quote_num"] > 5:
-            percentage_dic[AnimeLst[i]] = {}
-            percentage_dic[AnimeLst[i]]["quote_num"] = dic[AnimeLst[i]]["quote_num"]
-            percentage_dic[AnimeLst[i]]["char_percentage"] = {}
-            CharLst = list(dic[AnimeLst[i]]["char_num"].keys())
-            for c in CharLst:
-                percentage_dic[AnimeLst[i]]["char_percentage"][c] = round(dic[AnimeLst[i]]["char_num"][c]/percentage_dic[AnimeLst[i]]["quote_num"],2)
+        percentage_dic[AnimeLst[i]] = {}
+        percentage_dic[AnimeLst[i]]["quote_num"] = FiveMore[AnimeLst[i]]["quote_num"]
+        percentage_dic[AnimeLst[i]]["char_percentage"] = {}
+        CharLst = list(FiveMore[AnimeLst[i]]["char_num"].keys())
+        for c in CharLst:
+            percentage_dic[AnimeLst[i]]["char_percentage"][c] = round(FiveMore[AnimeLst[i]]["char_num"][c]/percentage_dic[AnimeLst[i]]["quote_num"],2)
 
     return percentage_dic
 
@@ -87,7 +86,7 @@ def main():
     filename = 'AnimeChanCalculation.txt'
     dic = total_char_quote(cur)
     FiveMore = MoreThanFiveQuotes(dic)
-    percentage_dic = percentage_char_quote(dic)
+    percentage_dic = percentage_char_quote(FiveMore)
     write_result(FiveMore,dic,percentage_dic,filename)
     AnimeChanVisual(FiveMore)
 

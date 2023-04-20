@@ -75,9 +75,10 @@ def AnimeChanVisual(FiveMore):
         for c in CharLst:
             NumQuoLst.append(FiveMore[AnimeLst[i]]['char_num'][c])
         
-        fig = go.Figure(data=[go.Pie(labels=CharLst,values=NumQuoLst)])
+        fig = go.Figure(data=[go.Pie(labels=CharLst,values=NumQuoLst,hole=.4)])
         title_str = "The percentage of each character's quotes in '" + AnimeLst[i] + "'"
         fig.update_layout(title = title_str)
+        fig.update_traces(textfont_size=20)
         fig.show()
 
 def main():

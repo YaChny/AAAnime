@@ -1,0 +1,12 @@
+Maximum number of episodes: [('Naruto', 220)]
+
+Minimum number of episodes: [("Cowboy Bebop: Knockin' on Heaven's Door", 1), ('Neon Genesis Evangelion: Death & Rebirth', 1), ('Neon Genesis Evangelion: The End of Evangelion', 1), ('Ghost in the Shell', 1), ('Rurouni Kenshin: Meiji Kenkaku Romantan - Ishinshishi e no Chinkonka', 1), ('Akira', 1), ('Appleseed (Movie)', 1), ("Mobile Suit Gundam: The 08th MS Team - Miller's Report", 1), ("Mobile Suit Gundam: Char's Counterattack", 1), ('Mobile Suit Gundam F91', 1), ('Mobile Suit Gundam Wing: Endless Waltz', 1), ('Air Movie', 1)]
+
+The Categories: 
+1-44 Episodes, 45-88 Episodes, 89-132 Episodes, 133-176 Episodes, 177-220 Episodes, To Be Determined
+
+Number of Anime in Each Category: 
+{'1-44 Episodes': 78, '45-88 Episodes': 17, '89-132 Episodes': 1, '133-176 Episodes': 1, '177-220 Episodes': 2, 'To Be Determined': 1}
+
+Percentage of Anime in Each Category: 
+{'1-44 Episodes': 0.78, '45-88 Episodes': 0.17, '89-132 Episodes': 0.01, '133-176 Episodes': 0.01, '177-220 Episodes': 0.02, 'To Be Determined': 0.01}

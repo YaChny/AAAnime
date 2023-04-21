@@ -59,6 +59,7 @@ def visual():
     ax.bar(fruits, counts,  color=bar_colors)
 
     ax.set_ylabel('post_count')
+    ax.set_xlabel('Categories')
 
     ax.set_title('Number of Posts in Each Category')
     # save the fig to fig.jpg

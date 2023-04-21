@@ -50,7 +50,7 @@ def GetArtist(artist_data, cur, conn):
 
     # get the id form tag data table and use the id to store the new 25 items
     try:
-        cur.execute('SELECT id FROM tag_data WHERE id = (SELECT MAX(id) FROM tag_data)')
+        cur.execute('SELECT id FROM artist_data WHERE id = (SELECT MAX(id) FROM artist_data)')
         start = cur.fetchone()
         start = start[0]
     except:
